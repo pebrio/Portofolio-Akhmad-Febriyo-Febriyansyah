@@ -4,7 +4,7 @@ const About = () => {
   return (
     <section id="about" className="section about">
       <div className="container">
-        <h2 className="section-title">Tentang Saya</h2>
+        <h2 className="section-title">About Me</h2>
         <div className="about-content">
           <div className="about-text">
             <p>
@@ -12,13 +12,14 @@ const About = () => {
               Fokus utama saya adalah memastikan perangkat keras, perangkat lunak, dan jaringan di lingkungan kerja beroperasi tanpa hambatan.
             </p>
             <p>
-              Dengan pengalaman menangani berbagai skenario *troubleshooting* mulai dari masalah ringan hingga manajemen *server* dasar, saya mengerti pentingnya respons cepat dan komunikasi yang baik untuk membantu pengguna (*end-user*) agar tetap produktif.
+              Dengan pengalaman menangani berbagai skenario *troubleshooting* mulai dari masalah ringan hingga manajemen *server* dasar, saya mengerti pentingnya respons cepat dan
+              komunikasi yang baik untuk membantu pengguna (*end-user*) agar tetap produktif.
             </p>
           </div>
 
           <div className="stats-grid">
             <div className="stat-card">
-              <h3>3+</h3>
+              <h3>1</h3>
               <p>Tahun Pengalaman</p>
             </div>
             <div className="stat-card">

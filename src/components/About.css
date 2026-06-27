@@ -1,0 +1,84 @@
+/* =============================================
+   ABOUT SECTION — Mobile-First
+   ============================================= */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-text {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+}
+
+.about-text p {
+  margin-bottom: 1.25rem;
+}
+
+.about-text strong {
+  color: var(--color-text-main);
+}
+
+/* Stats: 1-col on mobile */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+}
+
+.stat-card {
+  background-color: var(--color-bg-secondary);
+  padding: 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid var(--color-border);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-primary);
+}
+
+.stat-card h3 {
+  font-size: 2.25rem;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
+
+.stat-card p {
+  color: var(--color-text-main);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* --- Tablet: 3-col stats --- */
+@media (min-width: 768px) {
+  .about-content {
+    gap: 3.5rem;
+  }
+
+  .about-text {
+    font-size: 1.125rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .stat-card {
+    padding: 2rem;
+  }
+
+  .stat-card h3 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+}

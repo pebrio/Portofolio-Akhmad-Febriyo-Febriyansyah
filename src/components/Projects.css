@@ -2,11 +2,56 @@
    PROJECTS SECTION — Mobile-First
    ============================================= */
 
-/* 1-col on mobile */
-.projects-grid {
-  display: grid;
-  grid-template-columns: 1fr;
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.section-header > div {
+  flex: 1;
+  min-width: 250px;
+}
+
+.btn-sm {
+  height: fit-content;
+  min-height: 40px;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+}
+
+/* Carousel wrapper */
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.projects-carousel {
+  display: flex;
   gap: 1.25rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar */
+.projects-carousel::-webkit-scrollbar {
+  height: 4px;
+}
+
+.projects-carousel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.projects-carousel::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 2px;
 }
 
 .project-card {
@@ -18,6 +63,9 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  min-width: 300px;
 }
 
 .project-card:hover {
@@ -69,11 +117,60 @@
   font-weight: 500;
 }
 
-/* --- Tablet: 2-col --- */
+.project-doc-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(217, 70, 239, 0.1));
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-primary);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.project-doc-link:hover {
+  background: linear-gradient(135deg, var(--color-primary), rgba(147, 51, 234, 0.8));
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(147, 51, 234, 0.3);
+}
+
+/* Carousel indicators */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: scale(1.2);
+}
+
+.indicator:hover {
+  border-color: var(--color-primary);
+}
+
+/* --- Tablet: 2-col carousel --- */
 @media (min-width: 768px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+  .project-card {
+    flex: 0 0 calc(50% - 0.625rem);
+    min-width: 350px;
   }
 
   .project-content {
@@ -92,5 +189,13 @@
   .project-desc {
     margin-bottom: 1.5rem;
     font-size: 1rem;
+  }
+}
+
+/* --- Laptop: 3-col carousel --- */
+@media (min-width: 1024px) {
+  .project-card {
+    flex: 0 0 calc(33.333% - 0.834rem);
+    min-width: 300px;
   }
 }

@@ -115,9 +115,10 @@ img {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #7e22ce 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, #7e22ce 50%, #d946ef 100%);
   color: white;
-  box-shadow: 0 4px 15px rgba(147, 51, 234, 0.25);
+  box-shadow: 0 4px 15px rgba(147, 51, 234, 0.35);
+  border: none;
 }
 
 .btn-primary::before {
@@ -138,8 +139,8 @@ img {
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.45);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(168, 85, 247, 0.55);
 }
 
 .btn-primary:hover::before {

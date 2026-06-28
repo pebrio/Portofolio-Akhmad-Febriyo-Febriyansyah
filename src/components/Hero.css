@@ -14,6 +14,31 @@
     min-height: 300px;
   }
 
+  .hero-photo-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    display: inline-block;
+  }
+
+  .hero-photo-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(7, 3, 19, 0.2) 30%,
+      rgba(7, 3, 19, 0.8) 100%
+    );
+    pointer-events: none;
+    z-index: 10;
+    border-radius: 0 0 20px 20px;
+  }
+
   .hero-photo {
     width: 100%;
     max-width: 350px;
@@ -27,6 +52,7 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     /* Memberikan efek kedalaman */
     transition: transform 0.3s ease;
+    display: block;
   }
 
   .hero-photo:hover {
@@ -102,13 +128,30 @@
 .cta-group {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.5rem;
   align-items: center;
 }
 
 .cta-group .btn {
-  width: 100%;
-  max-width: 280px;
+  width: auto;
+  max-width: none;
+  min-height: 36px;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.cta-group .btn-secondary {
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(217, 70, 239, 0.1));
+  border: 1.5px solid var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.cta-group .btn-secondary:hover {
+  background: linear-gradient(135deg, var(--color-primary), rgba(147, 51, 234, 0.8));
+  color: white;
+  border-color: var(--color-primary);
 }
 
 .hero-visual {
@@ -171,11 +214,15 @@
   .cta-group {
     flex-direction: row;
     justify-content: center;
+    gap: 0.8rem;
   }
 
   .cta-group .btn {
     width: auto;
     max-width: none;
+    min-height: 38px;
+    padding: 0.45rem 1.1rem;
+    font-size: 0.88rem;
   }
 
   .shape-1 {

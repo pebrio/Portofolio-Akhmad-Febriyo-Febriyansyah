@@ -2,8 +2,57 @@
    HERO SECTION — Mobile-First
    ============================================= */
 .hero {
+  /* Tambahkan atau perbarui bagian ini di Hero.css */
+
+  .hero-visual {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Tambahkan min-height agar area visual punya ruang saat gambar dimuat */
+    min-height: 300px;
+  }
+
+  .hero-photo {
+    width: 100%;
+    max-width: 350px;
+    /* Atur ukuran maksimal foto */
+    height: auto;
+    border-radius: 20px;
+    /* Opsional: memberikan kesan modern */
+    position: relative;
+    z-index: 2;
+    /* Agar foto berada di depan elemen shape */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    /* Memberikan efek kedalaman */
+    transition: transform 0.3s ease;
+  }
+
+  .hero-photo:hover {
+    transform: scale(1.02);
+    /* Sedikit efek animasi saat disorot */
+  }
+
+  /* Sesuaikan shape agar berada di belakang foto */
+  .shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 1;
+    /* Shape tetap di belakang */
+  }
+
+  /* Penyesuaian untuk tampilan Laptop agar foto tidak terlalu besar */
+  @media (min-width: 1024px) {
+    .hero-photo {
+      max-width: 400px;
+    }
+  }
+
   min-height: 100vh;
-  min-height: 100dvh; /* Dynamic viewport for mobile browsers */
+  min-height: 100dvh;
+  /* Dynamic viewport for mobile browsers */
   display: flex;
   align-items: center;
   padding-top: 80px;
